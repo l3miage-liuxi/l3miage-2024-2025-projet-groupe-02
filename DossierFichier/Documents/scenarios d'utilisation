@@ -104,11 +104,11 @@ b- Pour valider une livraison effectuée, code de validation connu par le client
 
 ## Partie planificateur 
 
-** Scénario 1 : Organisation des équipes de livreurs ** 
+**Scénario 1 : Organisation des équipes de livreurs** 
 
-• ** Contexte ** : Un planificateur accède au logiciel le matin pour préparer les tournées. 
+• **Contexte** : Un planificateur accède au logiciel le matin pour préparer les tournées. 
 
-• ** Actions ** : 
+• **Actions** : 
 
 Voire la liste des livreurs disponibles et création de N équipes de livreurs en fonction de leurs disponibilités de la journée concernée.  
 
@@ -120,17 +120,17 @@ Repartire les colis en zones (tournées) de livraisons en tenant compte des cont
 
  Affectater à chaque tournée une équipe chacune.  
 
-• ** Résultat attendu ** : Les équipes reçoivent leurs affectations, et les trajets sont optimisés pour minimiser les coûts. 
+• **Résultat attendu** : Les équipes reçoivent leurs affectations, et les trajets sont optimisés pour minimiser les coûts. 
 
  
 
  
 
-** Scénario 2 : Suivi en temps réel des tournées ** 
+**Scénario 2 : Suivi en temps réel des tournées** 
 
-• ** Contexte ** : Pendant la journée, le planificateur surveille les livreurs en cours de tournée. 
+• **Contexte** : Pendant la journée, le planificateur surveille les livreurs en cours de tournée. 
 
-• ** Actions **: 
+• **Actions**: 
 
 1. Consultation d’une carte avec la position GPS des livreurs. 
 
@@ -138,13 +138,13 @@ Repartire les colis en zones (tournées) de livraisons en tenant compte des cont
 
 3. Réaffectation des colis en cas d’imprévu (par exemple, un livreur bloqué dans un embouteillage) et modification urgent des trajets. 
 
-• ** Résultat attendu ** : Les retards sont minimisés, et les clients reçoivent leurs colis dans les délais. 
+• **Résultat attendu** : Les retards sont minimisés, et les clients reçoivent leurs colis dans les délais. 
 
  
 
  
 
-** Exemple: ** 
+**Exemple:** 
 
 Marie est la planificatrice d'un entrepôts Mobilis à Crolles. 
 Elle a 10 livreurs en disposition. 
@@ -165,7 +165,7 @@ Gestion des imprévus //
 
  
 
-*Planificateur Interrogation, Eventuels Imprévus/Risque **: 
+*Planificateur Interrogation, Eventuels Imprévus/Risque**: 
 
  
 
