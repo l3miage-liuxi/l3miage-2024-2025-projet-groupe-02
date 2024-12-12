@@ -37,11 +37,11 @@
 
 **Cas 2: Un accident empêche un livreur de poursuivre sa tournée** 
 
-**Contexte : ** 
+**Contexte :** 
 
 Pendant une tournée, un livreur est impliqué dans un accident de voiture mineur. La camionnette est inutilisable et la tournée ne peut pas être terminée. 
 
-**Déroulé : ** 
+**Déroulé :** 
 
 Le livreur utilise l’option "Signalement d’urgence" sur l’application pour informer le planificateur de l’accident et de l’état du véhicule. 
 
@@ -53,7 +53,7 @@ Les colis sont divisé en 2 ou 3 zones vers différents livreurs selon leurs pos
 
 Le livreur accidenté reste sur place pour attendre l’assistance tandis que ses colis sont transférés à l’équipe en renfort. 
 
-**Résultat attendu : ** 
+**Résultat attendu :** 
 
 Incident signalé au planificateur, retard pour les livraisons dans la zone donner 
 
@@ -65,11 +65,11 @@ Les livraisons critiques sont effectuées sans interruption majeure, et le livre
 
 Cas 3: Le client refuse le colis pour une erreur de contenu 
 
-**Contexte : ** 
+**Contexte :** 
 
 Un livreur arrive chez un client, mais celui-ci refuse le colis, affirmant qu’il ne correspond pas à sa commande. 
 
-**Déroulé : ** 
+**Déroulé :** 
 
 Le livreur ouvre l’application et sélectionne "Signaler un problème". 
 
@@ -81,7 +81,7 @@ Le colis est marqué comme "à retourner au dépôt" et retiré de la tournée a
 
  
 
-** Résultat attendu : ** 
+**Résultat attendu :** 
 
 Le problème est documenté, le client est informé qu’un suivi sera effectué, et la tournée se poursuit sans délai supplémentaire. 
 
@@ -89,7 +89,7 @@ Le problème est documenté, le client est informé qu’un suivi sera effectué
 
  
 
-** Livreur Interrogation, Eventuels Imprévus/Risque: ** 
+**Livreur Interrogation, Eventuels Imprévus/Risque:** 
  
 
 a- Une tablette pour chaque livreur d'une même équipe 
@@ -165,7 +165,7 @@ Gestion des imprévus //
 
  
 
-*Planificateur Interrogation, Eventuels Imprévus/Risque**: 
+**Planificateur Interrogation, Eventuels Imprévus/Risque**: 
 
  
 
