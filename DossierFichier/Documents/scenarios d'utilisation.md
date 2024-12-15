@@ -1,230 +1,304 @@
-## Partie livreur 
-
-### Scénario 1 : Consultation et exécution d’une tournée 
-
--  **Contexte** : Un livreur commence sa journée en vérifiant ses livraisons. 
-
--  **Actions**: 
-
-1. Accès à l’application pour consulter la liste des livraisons de la journée. 
-
-2. Suivi de l’itinéraire proposé avec navigation intégrée. 
-
-3. Notifications automatiques envoyées aux clients lors de l’arrivée. 
-
-**Résultat attendu** : Le livreur termine sa tournée en respectant les plages horaires prioritaires. 
-
+Scénario 1 : Planification des livraisons 
  
  
-
-**Scénario 2 : Gestion des imprévus** 
-
-• **Contexte** : Un livreur rencontre un problème, comme l’absence d’un client. 
-
-• **Actions** : 
-
-1. Signalement de l’imprévu dans l’application (motif et photo si nécessaire). 
-
-2. Proposition d’options pour replanifier la livraison (plus tard dans la journée ou un autre jour). 
-
-3. Validation de la replanification par le planificateur. 
-
-• **Résultat attendu** : Le colis est reprogrammé pour une livraison ultérieure sans générer d'erreur administrative. 
-
- 
-
- 
-
-**Cas 2: Un accident empêche un livreur de poursuivre sa tournée** 
-
-**Contexte :** 
-
-Pendant une tournée, un livreur est impliqué dans un accident de voiture mineur. La camionnette est inutilisable et la tournée ne peut pas être terminée. 
-
-**Déroulé :** 
-
-Le livreur utilise l’option "Signalement d’urgence" sur l’application pour informer le planificateur de l’accident et de l’état du véhicule. 
-
-Le logiciel identifie automatiquement l’équipe la plus proche et propose une réattribution des colis restants. 
-
-Le planificateur valide et notifie l’équipe proche de venir récupérer les colis. 
-
-Les colis sont divisé en 2 ou 3 zones vers différents livreurs selon leurs positions/zone (un algo kicks in to optimise the déplacements) 
-
-Le livreur accidenté reste sur place pour attendre l’assistance tandis que ses colis sont transférés à l’équipe en renfort. 
-
-**Résultat attendu :** 
-
-Incident signalé au planificateur, retard pour les livraisons dans la zone donner 
-
-Le livreur impacter (Bob)  
-
-Les livraisons critiques sont effectuées sans interruption majeure, et le livreur accidenté reçoit l’aide nécessaire. 
-
- 
-
-Cas 3: Le client refuse le colis pour une erreur de contenu 
-
-**Contexte :** 
-
-Un livreur arrive chez un client, mais celui-ci refuse le colis, affirmant qu’il ne correspond pas à sa commande. 
-
-**Déroulé :** 
-
-Le livreur ouvre l’application et sélectionne "Signaler un problème". 
-
-Il choisit l’option "Refus de livraison" et décrit brièvement la raison donnée par le client. Il prend également une photo du colis pour preuve. 
-
-Le logiciel envoie l’information au planificateur et enregistre l’incident. 
-
-Le colis est marqué comme "à retourner au dépôt" et retiré de la tournée active. 
-
- 
-
-**Résultat attendu :** 
-
-Le problème est documenté, le client est informé qu’un suivi sera effectué, et la tournée se poursuit sans délai supplémentaire. 
-
- 
-
- 
-
-**Livreur Interrogation, Eventuels Imprévus/Risque:** 
- 
-
-a- Une tablette pour chaque livreur d'une même équipe 
-
-b- Pour valider une livraison effectuée, code de validation connu par le client seul ou QRD?, mail de notification? 
-
---------------------------------------------------------------------------------------------------------------------- 
-
- 
-
- 
-
-## Partie planificateur 
-
-**Scénario 1 : Organisation des équipes de livreurs** 
-
-• **Contexte** : Un planificateur accède au logiciel le matin pour préparer les tournées. 
-
-• **Actions** : 
-
-Voire la liste des livreurs disponibles et création de N équipes de livreurs en fonction de leurs disponibilités de la journée concernée.  
-
-Visualisation de la liste des colis pour la journée.  
-
-Utilisation d’une carte pour visualiser les zones de livraison et optimiser les trajets  
-
-Repartire les colis en zones (tournées) de livraisons en tenant compte des contraintes de plages horaires des clients et optimiser ces tournées/trajets.  
-
- Affectater à chaque tournée une équipe chacune.  
-
-• **Résultat attendu** : Les équipes reçoivent leurs affectations, et les trajets sont optimisés pour minimiser les coûts. 
-
- 
-
- 
-
-**Scénario 2 : Suivi en temps réel des tournées** 
-
-• **Contexte** : Pendant la journée, le planificateur surveille les livreurs en cours de tournée. 
-
-• **Actions**: 
-
-1. Consultation d’une carte avec la position GPS des livreurs. 
-
-2. Identification des colis livrés et des éventuels retards. 
-
-3. Réaffectation des colis en cas d’imprévu (par exemple, un livreur bloqué dans un embouteillage) et modification urgent des trajets. 
-
-• **Résultat attendu** : Les retards sont minimisés, et les clients reçoivent leurs colis dans les délais. 
-
- 
-
- 
-
-**Exemple:** 
-
-Marie est la planificatrice d'un entrepôts Mobilis à Crolles. 
-Elle a 10 livreurs en disposition. 
- 
-Elle doit organiser les équipes afin de minimiser le temps des trajets et la charge de travail des livraisons. 
- 
-Après l'identification de Marie sur le logiciel ,elle peut consulter la liste des livreurs et le nombre de colis disponible en stock. 
- 
-A l'aide de logiciel , elle peut faire une répartition automatique aléatoire ou selon les affinités entre les livreurs , en des équipes(2 livreurs/camion) mais non finalisées. 
-Elle doit vérifier la cohérence de la répartition des équipes si elle est convenable ou pas, et voir si y'a des changements à faire avant de finaliser la répartition.   
- 
-Une fois les équipes constituées, le logiciel l'aide à trouver une répartition des tournées de façon aléatoire ou optimale.  
- 
-Grace  au logiciel , elle peut faire une affectation des trajets aux équipes de manière automatique ou optimisé en fonction des zones et de l'efficacité des livreurs. 
- 
-// Contrainte en BONUS : au niveau de nombres de colis par client , un même client peut avoir 0 , 1 ou plusieurs colis 
-Gestion des imprévus // 
-
- 
-
-**Planificateur Interrogation, Eventuels Imprévus/Risque**: 
-
- 
-
- Problème 1: 
-
-Après la répartition automatique des équipes , Marie constate que le nombre de livreurs présents est diffèrent du nombre affiché sur le logiciel et qu'un livreur est absent. 
-Marie est face à 4 choix : 
-1/Soit le livreur rentre chez lui et son trajet sera répartie sur les autres équipes , d'où une augmentation en charge de travail et de temps de livraison. 
-2/Soit le livreur doit bosser seule et faire la livraison sans aide, d'où un retard est "probable" ( a voir) 
-3/Soit elle intègre le livreur dans une des équipes et divise aussi le trajet sur les équipes. 
-4/Soit elle annule complètement la livraison de l'équipe concernée et sera reportée au jour suivant. 
- 
-Problème 2 : 
-Apres la répartition des équipes , Marie constate que 2 livreurs de 2 équipés différentes sont absents. 
-Marie est face à 2 choix : 
-1/ Soit elle annule les 2 livraisons complètement , et envoi un mail aux clients en s'excusant de la gêne occasionnée. 
-2/Soit elle force les 2 livreurs à faire la livraison sans aide, même s'il y aura des retards. 
+Contexte : 
+• Date : 13 décembre 2024. 
+• Planificatrice : Alice. 
+• Données : 150 commandes en stock pour la journée, capacité maximale du dépôt : 120 commandes. 
+• Demandes spéciales : 
+• John a payé un supplément pour une livraison avant 10h. 
+• Emma a une priorité standard, sans exigences particulières. 
+• Le colis de Bob est volumineux, a déjà été retardé deux fois, et a été créé le 10 décembre (il y a 3 jours). 
  
  
-
+Processus : 
+1. Filtrage des commandes par le système : 
+• Le système génère automatiquement deux listes : 
+• Liste 1 : Commandes du jour à livrer 
+• Les commandes créées jusqu’au 12 décembre inclus sont sélectionnées. 
+• Règles de tri : les commandes créées les moins récentes apparaissent en haut (exemple : une commande du 10 décembre sera prioritaire par rapport à une commande du 11 décembre). 
+• Les 120 premières commandes sont retenues. Les 30 restantes sont marquées comme retardées une fois, puis déplacées hors de la liste 1. 
+• Liste des commandes en attente : 
+• Comprend les commandes non incluses dans la liste 1 et celles marquées comme retardées. 
+• Règles de tri : 
+• Les commandes créées plus tôt sont prioritaires. 
+• Plus le nombre de retards est élevé, plus la commande est prioritaire. 
+• Les commandes payantes sont prioritaires par rapport aux commandes standards. 
+2. Ajustement des commandes par la planificatrice : 
+• Alice accède à l’interface commande. 
+• Vue gauche : Liste des commandes du jour. 
+• Vue droite : Liste des commandes en attente, où figure la commande de Bob : 
+• Date de création : 10 décembre. 
+• Nombre de retards : 2. 
+• Alice : 
+• Sélectionne la commande avec la priorité la plus basse dans la liste du jour et clique sur « Retirer ». 
+• Sélectionne la commande de Bob dans la liste en attente et clique sur « Ajouter ». 
+• Le système met automatiquement à jour la liste des livraisons du jour. 
+3. Validation du plan : 
+• Alice vérifie que la liste finale inclut toutes les commandes prioritaires (comme celle de John). 
+• Elle clique sur le bouton valider, verrouillant ainsi le plan et envoyant des notifications aux clients. 
+ 
+ 
+Contraintes : 
+• Une fois le plan validé, les clients ne peuvent plus modifier l’heure de réception des commandes. 
+ 
+ 
+Résultat : 
+• Le système filtre et organise les commandes de manière optimale, équilibrant les nouvelles commandes et celles en attente. 
  
  
  
-
-
-Questions 
-
-Planificateur: 
-
  
-
-Planification pour le lendemain : 24H avant  (le client recevra la notif de sa commande à livrer 24h avant au moins)? 48h?  
-
-Conclure à 8h max ?     12h max (le client recevra la notif de sa commande à livrer pas avant 12h00) ? 
-
-Planification pour une date choisie du futur (après demain, après après demain) ?: exemple il est à vendre 23 decembre et je veux planifier pour mardi 27 decembre. 
-
-Mot de pass oublié 
-
-J'ai des livreurs disponibles pour le jour à planifier 
-
-Je n'ai quun seul livreur pour le jour à planifier 
-
-Je nai pas de livreur disponible pour le jour à planifier 
-
-J’ai 8+1 livreurs disponibles pour le jour à planifier 
-
-  
-
-J’ai une seule livraison à faire (le jour n'est pas encore choisi, cest au plannif de le choisir) 
-
-J’ai plusieurs livraisons à faire 
-
+Scénario 2 : Planification des itinéraires 
  
-
  
-
-Livreur: 
-
-Le livreur ou le planificateur ont il le droit de se créer eux mème leur compte? Si oui un livreur ou planificateur peut en  avoir plusieurs? Comment garantir un unique compte pour chaque. 
-
+Contexte : 
+• Date : 13 décembre 2024. 
+• Planificatrice : Alice. 
+• Données : 120 commandes du jour à livrer, y compris celle de John avec une exigence de livraison avant 10h. 
  
+ 
+Processus : 
+1. Identification des commandes spéciales : 
+• Alice ouvre l’interface de planification des itinéraires. 
+• Le système met en évidence les commandes nécessitant une attention particulière. 
+• Les détails de la commande de John incluent : 
+• Adresse : une rue et un code postal précis. 
+• Exigence : livraison avant 10h. 
+2. Génération des itinéraires : 
+• Alice saisit l’adresse de John et l’heure de livraison souhaitée, puis clique sur « Générer un itinéraire ». 
+• Le système : 
+• Planifie l’itinéraire prioritaire pour la commande de John. 
+• Optimise l’itinéraire pour inclure les autres commandes de la même zone. 
+• Une fois la planification terminée, Alice peut consulter : 
+• Une carte des itinéraires. 
+• Une liste des colis inclus dans chaque itinéraire (numéros de commande, adresses, exigences). 
+3. Attribution des tâches : 
+• Le système affiche les informations des quatre livreurs (abcd), y compris leurs photos et coordonnées. 
+• Alice vérifie la correspondance entre itinéraires et colis, puis clique sur « Assigner les itinéraires ». 
+• Le système attribue les itinéraires aux livreurs de manière aléatoire et synchronise les informations sur leurs applications mobiles. 
+ 
+ 
+Contraintes : 
+• La version actuelle du système n’inclut pas encore l’optimisation en fonction de la familiarité des livreurs avec les zones (amélioration prévue dans une version ultérieure). 
+ 
+ 
+Résultat : 
+• Les itinéraires sont planifiés efficacement, les commandes spéciales sont prioritaires, et les livreurs reçoivent des instructions claires. 
+ 
+ 
+Scénario 3 : Chargement des colis 
+ 
+ 
+Contexte : 
+• Date : 14 décembre 2024. 
+• Livreur : Oliver. 
+• Situation particulière : 
+• Le colis d’Emma est volumineux, avec une priorité standard. 
+• Le colis de Bob est également volumineux, mais avec une priorité élevée et 2 retards. 
+ 
+ 
+Processus : 
+1. Vérification de la capacité du véhicule : 
+• Oliver commence à charger les colis. 
+• Le système signale que la capacité restante du véhicule est insuffisante pour contenir à la fois les colis d’Emma et de Bob. 
+• Les détails des colis sont affichés : 
+• Emma : priorité standard, colis volumineux. 
+• Bob : priorité élevée, 2 retards. 
+2. Retardement des colis à faible priorité : 
+• Oliver utilise l’application mobile pour signaler un retard. 
+• Il scanne le colis d’Emma et sélectionne l’option « Retarder ». 
+• Le système : 
+• Enregistre une augmentation du compteur de retards pour la commande d’Emma (+1). 
+• Met à jour l’état du colis comme « En attente au dépôt ». 
+3. Chargement des colis prioritaires : 
+• Oliver charge en priorité le colis de Bob dans le véhicule. 
+• L’application met à jour automatiquement l’état de la commande de Bob comme « En cours de livraison ». 
+ 
+ 
+Résultat : 
+• Le colis de Bob, avec une priorité plus élevée, est correctement pris en charge. 
+• Le colis d’Emma est reporté à la prochaine livraison. 
+ 
+ 
+ 
+ 
+Scénario 4 : Suivi des équipes 
+ 
+ 
+Contexte : 
+• Date : 14 décembre 2024. 
+• Planificatrice : Alice. 
+• Situation : Suivi des équipes de livraison (abcd, réparties en binômes). 
+ 
+ 
+Processus : 
+1. Consultation des équipes : 
+• Alice ouvre l’interface « Suivi des équipes ». 
+• Le panneau gauche affiche : 
+• Les équipes (binômes) avec les noms et photos des livreurs. 
+• Les itinéraires assignés, détaillant les clients et horaires prévus. 
+2. Localisation en temps réel : 
+• Alice saisit « Équipe 1 » dans le champ de recherche, puis clique sur « Suivre ». 
+• Une carte interactive affiche l’emplacement actuel de l’équipe, son itinéraire et son historique récent. 
+3. Vérification et intervention : 
+• Si une équipe prend du retard ou dévie de son itinéraire, Alice reçoit une alerte. 
+• Elle peut communiquer directement avec les livreurs via une fonction de messagerie intégrée pour obtenir des détails ou donner des instructions. 
+ 
+ 
+Résultat : 
+• Alice suit l’avancement des livraisons en temps réel et intervient rapidement en cas de besoin. 
+ 
+ 
+ 
+Scénario 5 : Tournée de livraison d’une équipe de livreurs 
+ 
+ 
+Contexte : 
+• Date : 14 décembre 2024. 
+• Livreurs : Marc et Julien. 
+• Application : Interface mobile synchronisée en temps réel. 
+• Situation : Une équipe de deux livreurs effectue une tournée classique. 
+ 
+ 
+Étapes : 
+1. Connexion et préparation : 
+• Marc se connecte à l’application mobile en entrant son nom d’utilisateur et son mot de passe. 
+• Sur la page principale, il voit les informations suivantes : 
+• Le nom et les coordonnées de son coéquipier Julien. 
+• La liste des commandes du jour, incluant les adresses, les numéros de téléphone et les spécificités (par exemple : livraison urgente). 
+• Les deux livreurs montent dans le véhicule prêt à partir. 
+2. Livraison normale : 
+• Notification client : À l’approche d’une adresse (5 minutes avant), le livreur non conducteur utilise l’application pour envoyer un SMS automatique au client. 
+• Interaction client : Une fois sur place, le livreur non conducteur descend, scanne le colis et contacte le client si nécessaire. 
+• Confirmation : Le client réceptionne le colis et signe électroniquement via l’application. 
+• Pendant ce temps, le conducteur prépare l’itinéraire pour la prochaine livraison. 
+3. Fin de la tournée : 
+• Après avoir terminé toutes les livraisons, l’équipe retourne à l’entrepôt. 
+• Les livreurs garent leur véhicule, se déconnectent de l’application, et clôturent leur journée. 
+ 
+ 
+Résultat : 
+• Les colis sont livrés efficacement, avec confirmation électronique pour chaque client. 
+• L’équipe travaille de manière fluide grâce à une répartition claire des rôles et un outil synchronisé. 
+• Toutes les données sont enregistrées automatiquement dans le système pour suivi administratif. 
+ 
+ 
+ 
+Scénario 6 : Client absent lors de la livraison 
+ 
+ 
+Contexte : 
+• Date : 14 décembre 2024. 
+• Livreur : Julien. 
+• Situation : Julien se rend chez un client pour livrer un colis, mais ce dernier est absent. 
+ 
+ 
+Étapes : 
+1. Arrivée sur le lieu de livraison : 
+• Julien arrive à l’adresse du client, descend du véhicule, et scanne le colis pour vérifier qu’il correspond bien à la commande. 
+2. Constat d’absence : 
+• Julien attend quelques minutes devant la porte du client. 
+• N’ayant pas de réponse, il utilise l’application mobile et sélectionne l’option « Client absent ». 
+3. Signalement et traitement : 
+• Julien scanne à nouveau le colis pour associer l’information d’absence au bon paquet. 
+• Il confirme en appuyant sur le bouton « Soumettre ». 
+• Le système enregistre automatiquement une augmentation du compteur de retards pour la commande. 
+• L’état du colis est mis à jour comme « Retour à l’entrepôt ». 
+4. Retour à l’entrepôt : 
+• À la fin de la tournée, Julien retourne le colis à l’entrepôt  
+ 
+ 
+Scénario 7 : Gestion des exceptions - Embouteillages 
+ 
+ 
+Contexte : 
+• Date : 14 décembre 2024. 
+• Livreur : Benoît. 
+• Situation : Embouteillage sur l’itinéraire prévu, retardant la livraison des commandes dans la zone D. 
+ 
+ 
+Processus : 
+1. Signalement d’un embouteillage : 
+• Benoît ouvre l’application mobile et clique sur le bouton « Signaler un problème ». 
+• Il sélectionne l’option « Embouteillage » et renseigne les informations suivantes : 
+• Position actuelle : rue X, zone D. 
+• Prochaine destination : adresse du client Y. 
+• Zone d’embouteillage connue : carrefour Z. 
+2. Recalcul de l’itinéraire : 
+• Benoît soumet les informations, et le système : 
+• Identifie les zones d’embouteillage. 
+• Recalcule un itinéraire alternatif évitant ces zones. 
+• Le nouvel itinéraire est affiché dans l’application mobile. 
+3. Notification des clients : 
+• Le système envoie automatiquement une notification aux clients concernés, les informant du retard estimé. 
+• Alice (la planificatrice) reçoit également une alerte via l’interface de gestion des tâches et peut suivre l’évolution de la situation. 
+ 
+ 
+Résultat : 
+• Le livreur suit un itinéraire mis à jour, minimisant le retard. 
+• Les clients sont informés à l’avance, améliorant leur expérience. 
+ 
+ 
+Scénario 8 : Refus des colis par le client 
+ 
+ 
+Contexte : 
+• Date : 14 décembre 2024. 
+• Livreur : Céline. 
+• Situation : Le client refuse de signer et de réceptionner le colis, déclarant qu’il ne correspond pas à la commande. 
+ 
+ 
+Processus : 
+1. Signalement du problème : 
+• Céline ouvre l’application mobile et sélectionne l’option « Signaler un problème ». 
+• Elle choisit « Contenu de commande incorrect » et renseigne : 
+• Description : le client refuse le colis pour cause de contenu erroné. 
+• Preuves : elle télécharge des photos du colis (emballage, contenu visible). 
+• Le système enregistre automatiquement l’incident et marque le colis comme « Problème de commande ». 
+2. Retour du colis : 
+• Le colis est retiré de l’itinéraire actif de Céline. 
+• Le rapport d’incident est transmis au service client pour vérification. 
+3. Mise à jour de l’état de la commande : 
+• Si le problème est confirmé : 
+• Le système met la commande en statut « À corriger » et demande une intervention des équipes internes. 
+• Si le problème est réfuté : 
+• Le statut « Problème de commande » est supprimé, et la commande est reprogrammée pour une nouvelle livraison. 
+ 
+ 
+Résultat : 
+• L’incident est documenté en temps réel, garantissant une traçabilité. 
+• Le problème est transmis au bon service pour résolution, et le colis est correctement traité. 
+ 
+ 
+Scénario 9 : Gestion des exceptions - Route fermée 
+ 
+ 
+Contexte : 
+• Date : 14 décembre 2024. 
+• Livreur : Lucas. 
+• Situation : Une route est fermée, empêchant Lucas de livrer au client suivant. 
+ 
+ 
+Processus : 
+1. Signalement d’une route fermée : 
+• Lucas ouvre l’application et clique sur « Signaler un problème ». 
+• Il sélectionne « Route fermée » et remplit les informations nécessaires : 
+• Position actuelle : adresse A. 
+• Prochaine destination : adresse B. 
+• Détails : description de la fermeture (travaux, accident, etc.). 
+2. Mise à jour des données par le système : 
+• Le système marque la route comme « Indisponible » dans sa base de données. 
+• Les informations sont synchronisées avec tous les utilisateurs (planificatrice et autres livreurs). 
+3. Recalcul de l’itinéraire : 
+• Un itinéraire alternatif est généré, contournant la route fermée. 
+• Lucas reçoit la nouvelle route via son application mobile. 
+• Alice est notifiée et peut vérifier que la nouvelle route est cohérente. 
+ 
+ 
+Résultat : 
+• La route fermée est évitée grâce à une mise à jour en temps réel. 
+• La livraison se poursuit avec un itinéraire adapté. 
+ 
+ 
+Une contrainte : les livreurs et les planificateurs disposent chacun de leur propre compte, et l’unicité des comptes est garantie par un code employé spécifique à chaque utilisateur. Concernant la récupération de mot de passe, je ne suis pas certain que nous disposions de la technologie nécessaire pour permettre une récupération via e-mail ou SMS. Par conséquent, cette fonctionnalité ne sera pas prise en compte pour l’instant.
