@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './loginComponent.component.html',
-  styleUrls: ['./loginComponent.component.css']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponentComponent {
+export class LoginComponent {
   constructor(private router: Router) {}
 
   navigateToHome() {
