@@ -1,20 +1,8 @@
 <!-- main.component.html -->
 <div class="container">
-  <aside class="sidebar">
-    <h1 class="bonjour">Bonjour</h1>
-  </aside>
 
   <div class="main-content">
-    <header class="header">
-      <div class="logo-container">
-        <img src="assets/logo.png" alt="Logo" class="logo">
-      </div>
-      <nav class="nav-links">
-        <a (click)="navigateTo('/dashboard')">board1</a>
-        <a (click)="navigateTo('/profile')">board2</a>
-        <a (click)="navigateTo('/settings')">board3</a>
-      </nav>
-    </header>
+    <app-nav></app-nav> <!-- 复用导航栏 -->
 
     <div class="work-buttons">
       <div class="button-card" (click)="navigateTo('/work1')">
@@ -25,14 +13,7 @@
         <h2>work2</h2>
         <p>work</p>
       </div>
-      <div class="button-card" (click)="navigateTo('/work3')">
-        <h2>work3</h2>
-        <p>work</p>
-      </div>
-      <div class="button-card" (click)="navigateTo('/work4')">
-        <h2>work4</h2>
-        <p>work</p>
-      </div>
     </div>
   </div>
 </div>
+

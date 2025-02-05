@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import {NavComponent} from '../nav/nav.component';
 
 @Component({
   selector: 'app-mise-en-page',
-  imports: [],
+  imports: [NavComponent],
   templateUrl: './mise-en-page.component.html',
   styleUrl: './mise-en-page.component.css'
 })
