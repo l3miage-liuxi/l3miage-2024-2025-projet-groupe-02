@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #4b74b4, #365899); /* 渐变蓝色背景 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 轻微阴影，增加立体感 */
+  border-radius: 8px; /* 让导航栏有圆角，显得更柔和 */
+
+  .logo-container {
+    .logo {
+      height: 40px;
+    }
+  }
+
+  .nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+
+  .nav-links {
+    a {
+      margin-left: 2rem;
+      color: white;
+      cursor: pointer;
+
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2); /* 悬停时添加轻微的背景 */
+        color: white;
+        transform: scale(1.05); /* 轻微放大，让交互感更强 */
+      }
+    }
+  }
+}
+
