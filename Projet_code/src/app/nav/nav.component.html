@@ -2,9 +2,11 @@
   <div class="logo-container">
     <img src="assets/logo.png" alt="Logo" class="logo">
   </div>
-  <nav class="nav-links">
-    <a (click)="navigateTo('/dashboard')">Tableau de Bord</a>
-    <a (click)="navigateTo('/profile')">Planifier une journée</a>
-    <a (click)="navigateTo('/settings')">Visualiser une journée</a>
-  </nav>
+
+<nav class="nav-links">
+      <a routerLink="/home" routerLinkActive="active">Tableau de Bord</a>
+      <a routerLink="/planifier" routerLinkActive="active">Planifier</a>
+      <a routerLink="/visualiser" routerLinkActive="active">Visualiser</a>
+</nav>
 </header>
+

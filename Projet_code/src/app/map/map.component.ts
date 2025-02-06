@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import {latLng, tileLayer} from 'leaflet';
 import {FormsModule} from '@angular/forms';
+import {NavComponent} from '../nav/nav.component';
+
 
 @Component({
   selector: 'app-map',
-  imports: [LeafletModule,FormsModule],
+  imports: [LeafletModule,FormsModule,NavComponent],
   templateUrl: './map.component.html',
   styleUrl: './map.component.css'
 })
