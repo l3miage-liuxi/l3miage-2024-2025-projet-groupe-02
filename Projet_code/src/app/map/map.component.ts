@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component,signal } from '@angular/core';
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import {circle, icon,Icon, latLng, marker, polygon, tileLayer} from 'leaflet';
 import polyline from '@mapbox/polyline';
 import {FormsModule} from '@angular/forms';
 import {NavComponent} from '../nav/nav.component';
 import {PlanifierComponent} from "../planifier/planifier.component";
+import {EncodingComponent} from '../encoding/encoding.component';
 
 
 @Component({
   selector: 'app-map',
-  imports: [LeafletModule, FormsModule, NavComponent, PlanifierComponent],
+  imports: [LeafletModule,FormsModule,NavComponent,EncodingComponent,PlanifierComponent],
   templateUrl: './map.component.html',
   styleUrl: './map.component.css'
 })
@@ -58,4 +59,9 @@ export class MapComponent {
     console.log(polyline.decode(encodedStr))
     return polyline.decode(encodedStr);
   }
+  addresses = signal([
+    '22 Rue Abbé Grégoire, 38000 Grenoble',
+    '20 Rue Henri Barbusse, 38600 Fontaine',
+    '17 Rue de la Liberté, 38600 Fontaine'
+  ]);
 }

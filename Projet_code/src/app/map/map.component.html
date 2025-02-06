@@ -5,6 +5,10 @@
      [leafletOptions]="options"
      [leafletLayers]="layers">
 </div>
+
 <app-planifier></app-planifier>
 <button (click)="getRoute()">getRoute</button>
 <button (click)="getSit()">getSit</button>
+
+<app-encoding [addresses]="addresses()"></app-encoding>
+
