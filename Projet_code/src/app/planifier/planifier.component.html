@@ -1,1 +1,22 @@
-<p>planifier works!</p>
+<button (click)="getCsvData()">NMSL</button>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Référence</th>
+    <th>Équipe</th>
+    <th>Adresse de Livraison</th>
+    <th>État</th>
+    <th>Remarque</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let liv of livraison">
+    <td>{{ liv.reference }}</td>
+    <td>{{ liv.equipe }}</td>
+    <td>{{ liv.adresseDeLivraison }}</td>
+    <td>{{ liv.etat }}</td>
+    <td>{{ liv.remarque }}</td>
+  </tr>
+  </tbody>
+</table>
+

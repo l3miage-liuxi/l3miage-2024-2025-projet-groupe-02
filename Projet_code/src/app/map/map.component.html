@@ -2,5 +2,9 @@
 
 <div style="height: 300px;"
      leaflet
-     [leafletOptions]="options">
+     [leafletOptions]="options"
+     [leafletLayers]="layers">
 </div>
+<app-planifier></app-planifier>
+<button (click)="getRoute()">getRoute</button>
+<button (click)="getSit()">getSit</button>

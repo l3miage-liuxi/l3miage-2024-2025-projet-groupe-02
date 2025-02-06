@@ -1,0 +1,11 @@
+reference,equipe,adresse de livraison,etat,IDK IF IT WILL BE USEFUL
+c001,e1,3 Chemin des Tilleuls,ouvert,yes
+c002,e2,19 Chemin de Malanot,ferme,no
+c003,e2,10 Chemin du Foulet,en livraison,maybe
+c004,e2,1 Rue Louis Maisonnat,livre,IDK
+c005,e1,Impasse Sansaret,probleme,probably
+c006,e3,55 Rue du Petit Lac,ouvert,not
+c007,e3,160bis Avenue Jean Jaures,ferme,chicken
+c008,e3,3 Rue Laurent Darve,en livraison,duck
+c009,e3,6ter Rue de Chamechaude,ouvert,mayo
+
